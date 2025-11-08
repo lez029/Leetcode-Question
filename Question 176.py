@@ -48,9 +48,18 @@ Output:
 | null                |
 +---------------------+
 """
+#First Solution
 import pandas as pd
 
-def second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:
+def second_highest_salary_1(employee: pd.DataFrame) -> pd.DataFrame:
     unique_salary = employee['salary'].drop_duplicates().sort_values(ascending = False)
     return (pd.DataFrame({'SecondHighestSalary':[unique_salary.iloc[1]]}) if len(unique_salary) >= 2 else   
     pd.DataFrame({'SecondHighestSalary':[None]}))
+#This one is based on the method .drop_duplicates
+
+#Second Solution
+def second_highest_salary_2(employee: pd.DataFrame) -> pd.DataFrame:
+    unique_salary = employee.groupby('salary').mean().sort_values('salary',ascending=False)
+    return (pd.DataFrame({'SecondHighestSalary':[unique_salary.index[1]]}) if unique_salary.shape[0] >= 2 else pd.DataFrame({'SecondHighestSalary':[None]}))
+#This one is based on the method .groupby to group duplicates into a single row and sort the values. 
+#The complexity is less because it doesn't need to drop items in the DataFrame, it only calculates the mean
