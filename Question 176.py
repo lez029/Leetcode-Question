@@ -1,5 +1,7 @@
 """176. Second Highest Salary
-#/Table: Employee
+Source: https://leetcode.com/problems/second-highest-salary/
+
+Table: Employee
 
 +-------------+------+
 | Column Name | Type |

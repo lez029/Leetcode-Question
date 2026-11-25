@@ -1,4 +1,22 @@
 /**
+ * LeetCode 2: Add Two Numbers
+ * Source: https://leetcode.com/problems/add-two-numbers/
+ *
+ * Problem summary:
+ * Each input is a nonempty linked list encoding a nonnegative integer, with
+ * one decimal digit per node and the least significant digit first. Compute
+ * their sum and return a linked list using the same digit order.
+ * Only the integer zero may start with a zero in its usual decimal notation.
+ *
+ * Examples:
+ * - [2,4,3] + [5,6,4] -> [7,0,8] (342 + 465 = 807).
+ * - [0] + [0] -> [0].
+ * - [9,9,9,9,9,9,9] + [9,9,9,9] -> [8,9,9,9,0,0,0,1].
+ *
+ * Limits: Each input contains 1 to 100 nodes; node digits range from 0 to 9.
+ */
+
+/**
  * Definition for singly-linked list.
  * public class ListNode {
  *     int val;
